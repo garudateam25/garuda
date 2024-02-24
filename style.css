@@ -1,0 +1,43 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    background-image: "colorkit.png";
+}
+
+body{
+    background: url('colorkit.png') no-repeat;
+}
+
+.logo {
+    height: 50px;
+    margin: 5px;
+  }
+
+.login{
+    background-color: black;
+    color: aliceblue;
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    margin: 5px;
+    text-decoration: none;
+    width: max-content;
+   /* position: absolute;
+    right: 10px;
+    top: 15px;*/
+    font-family: "Montserrat", sans-serif;
+}
+
+.links{
+   text-decoration: none;
+   text-align: center;
+   color: black;
+   margin: 15px; 
+   justify-self: center;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
