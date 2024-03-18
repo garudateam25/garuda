@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garuda</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img{
+      height: 100px;
+    }
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: url('/assets/mahakumbh.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.8;
+      overflow: hidden; 
+    }
+
+
+    header {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+  header{
+    justify-items: center;
+  }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px auto;
+      max-width: 100vw; 
+    }
+
+    
+    #map-section {
+      width: 60%;
+      height: max-content;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.9); 
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+   
+    #data-section {
+      width: 35%;
+      height: max-content; 
+      padding: 20px;
+      margin: 10px;
+      background-color: rgba(0, 0, 0, 0.961); 
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+      overflow-y: auto; 
+    }
+
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #ffffff; 
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ffffff; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="/assets/logo.svg"></div>
+  </header>
+
+  <div class="container">
+    <div id="map-section">
+     
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230660.45188016552!2d81.63677108531746!3d25.402482059188515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2sPrayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710758520124!5m2!1sen!2sin" width="100%" height="600" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="data-section">
+      
+      <h2>Data</h2>
+      <table>
+        <tr>
+          <th>IP Address</th>
+          <td id="ip-address">127.0.0.1</td>
+        </tr>
+        <tr>
+          <th>Longitude</th>
+          <td id="longitude">Loading...</td>
+        </tr>
+        <tr>
+          <th>Latitude</th>
+          <td id="latitude">Loading...</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
+
+  <script>
+
+    let longs = [25.325655,56.26586,54.257556];
+    let latis = [45.56854,56.568554,65.1968];
+    
+    document.getElementById("longitude").innerHTML= longs[0];
+    document.getElementById("latitude").innerHTML= latis[0];
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 22.3072, lng: 73.1812},
+        zoom: 12 
+      });
+    }
+
+    
+  </script>
+</body>
+</html>
